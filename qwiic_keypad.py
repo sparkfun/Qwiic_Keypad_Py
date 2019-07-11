@@ -70,11 +70,11 @@ _AVAILABLE_I2C_ADDRESS = [0x4B]
 KEYPAD_ID 		= 0x00
 KEYPAD_VERSION1 = 0x01
 KEYPAD_VERSION2 = 0x02
-KEYPAD_BUTTON   = 0x04
-KEYPAD_TIME_MSB =  0x05
-KEYPAD_TIME_LSB =  0x06
-KEYPAD_UPDATE_FIFO = 0x07
-KEYPAD_CHANGE_ADDRESS = 0x08
+KEYPAD_BUTTON   = 0x03
+KEYPAD_TIME_MSB =  0x04
+KEYPAD_TIME_LSB =  0x05
+KEYPAD_UPDATE_FIFO = 0x06
+KEYPAD_CHANGE_ADDRESS = 0x07
 
 # define the class that encapsulates the device being created. All information associated with this
 # device is encapsulated by this class. The device class should be the only value exported 
@@ -190,7 +190,7 @@ class QwiicKeypad(object):
 		vMajor = self._i2c.readByte(self.address, KEYPAD_VERSION1)
 		vMinor = self._i2c.readByte(self.address, KEYPAD_VERSION2)
 
- 		return "v %d.%d" %( vMajor, vMinor)
+		return "v %d.%d" % ( vMajor, vMinor)
 
 	#----------------------------------------------------------------
 	# updateFIFO()
@@ -198,8 +198,8 @@ class QwiicKeypad(object):
  	# "commands" keypad to plug in the next button into the registerMap
 	#  note, this actually sets the bit0 on the updateFIFO register
 
- 	def updateFIFO(self):
- 		"""
+	def updateFIFO(self):
+		"""
 		"commands" keypad to plug in the next button into the registerMap
 		note, this actually sets the bit0 on the updateFIFO register
 
