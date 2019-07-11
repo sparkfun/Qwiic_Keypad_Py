@@ -56,29 +56,36 @@ def runExample():
 
 	myKeypad.begin()
 
+	print("Initialized. Firmware Version: %s" % myKeypad.getVersion())
+	print("Press a button: * to do a space. # to go to next line.")
+
 	button = 0
+	i=0
 	while True:
 
-		try:
-			# necessary for keypad to pull button from stack to readable register
-			myKeypad.updateFIFO()  
-  			button = myKeypad.getButton()
-  		except Exception as ee:
-  			print("Error: %s" % ee)
-  			button =0
-  			time.sleep(1)
+		# necessary for keypad to pull button from stack to readable register
+		myKeypad.updateFIFO()  
+		button = myKeypad.getButton()
 
-  		if button == -1:
-  			print("No keypad detected")
-  			time.sleep(1)
+		if button == -1:
+			print("No keypad detected")
+			time.sleep(1)
 
-  		elif button != 0:
-  			print("BUTTON: %s" % button)  
-  			time.sleep(.2)			
-  #   if (button == '#') Serial.println();
-  #   else if (button == '*') Serial.print(" ");
-  #   else Serial.print(button);
-  # }
+		elif button != 0:
+
+			# Get the character version of this char
+			charButton = chr(button)
+			if charButton == '#':
+				print()
+			elif charButton == '*':
+				print(" ", end="")
+			else: 
+				print(charButton, end="")
+
+			# Flush the stdout buffer to give immediate user feedback
+			sys.stdout.flush()
+			# print("THE BUTTON IS: %s" % charButton)
+		time.sleep(.25)
 
 if __name__ == '__main__':
 	try:
