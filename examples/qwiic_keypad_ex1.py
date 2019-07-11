@@ -60,7 +60,6 @@ def runExample():
 	print("Press a button: * to do a space. # to go to next line.")
 
 	button = 0
-	i=0
 	while True:
 
 		# necessary for keypad to pull button from stack to readable register
@@ -84,7 +83,7 @@ def runExample():
 
 			# Flush the stdout buffer to give immediate user feedback
 			sys.stdout.flush()
-			# print("THE BUTTON IS: %s" % charButton)
+
 		time.sleep(.25)
 
 if __name__ == '__main__':
