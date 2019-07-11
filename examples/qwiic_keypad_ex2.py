@@ -36,7 +36,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
 # SOFTWARE.
 #==================================================================================
-# Example 1
+# Example 2
 #
 
 from __future__ import print_function
@@ -57,7 +57,7 @@ def runExample():
 	myKeypad.begin()
 
 	print("Initialized. Firmware Version: %s" % myKeypad.getVersion())
-	print("Press a button: * to do a space. # to go to next line.")
+
 
 	button = 0
 	while True:
