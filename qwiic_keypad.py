@@ -150,7 +150,10 @@ class QwiicKeypad(object):
 
 	def getButton(self):
 		""" 
-			Returns the button at the top of the stack (aka the oldest button)
+			Returns the button at the top of the stack (aka the oldest button).
+
+			The return value is the 'ascii' value of th key pressed. To convert
+			to a character, use the python char() function.
 
 			:return: The next button value
 			:rtype: byte as integer
