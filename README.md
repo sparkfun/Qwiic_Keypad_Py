@@ -103,6 +103,30 @@ def runExample():
 
 	button = 0
 	while True:
+
+		# necessary for keypad to pull button from stack to readable register
+		myKeypad.updateFIFO()  
+		button = myKeypad.getButton()
+
+		if button == -1:
+			print("No keypad detected")
+			time.sleep(1)
+
+		elif button != 0:
+
+			# Get the character version of this char
+			charButton = chr(button)
+			if charButton == '#':
+				print()
+			elif charButton == '*':
+				print(" ", end="")
+			else: 
+				print(charButton, end="")
+
+			# Flush the stdout buffer to give immediate user feedback
+			sys.stdout.flush()
+
+		time.sleep(.25)
 		# Development in progress
 ```
 <p align="center">
