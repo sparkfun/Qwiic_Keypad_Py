@@ -12,7 +12,7 @@ Qwiic_Keypad_Py
 		<img src="https://img.shields.io/github/issues/sparkfun/Qwiic_Keypad_Py.svg" /></a>
 	<a href="https://qwiic-keypad-py.readthedocs.io/en/latest/?" alt="Documentation">
 		<img src="https://readthedocs.org/projects/qwiic-keypad-py/badge/?version=latest&style=flat" /></a>
-	<a href="https://github.com/sparkfun/Qwiic_BME280_Py/blob/master/LICENSE" alt="License">
+	<a href="https://github.com/sparkfun/Qwiic_Keypad_Py/blob/master/LICENSE" alt="License">
 		<img src="https://img.shields.io/badge/license-MIT-blue.svg" /></a>
 	<a href="https://twitter.com/intent/follow?screen_name=sparkfun">
         	<img src="https://img.shields.io/twitter/follow/sparkfun.svg?style=social&logo=twitter"
@@ -44,7 +44,7 @@ This driver package depends on the qwiic I2C driver:
 
 Documentation
 -------------
-The SparkFun qwiic BME280 module documentation is hosted at [ReadTheDocs](https://qwiic-keypad-py.readthedocs.io/en/latest/?)
+The SparkFun qwiic Keypad module documentation is hosted at [ReadTheDocs](https://qwiic-keypad-py.readthedocs.io/en/latest/?)
 
 Installation
 -------------
