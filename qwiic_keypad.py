@@ -159,8 +159,15 @@ class QwiicKeypad(object):
 			:rtype: byte as integer
 
 		"""
-		return self._i2c.readByte(self.address, KEYPAD_BUTTON)
-		return button
+		value=0
+
+		# bus can throw an issue
+		try:
+			value = self._i2c.readByte(self.address, KEYPAD_BUTTON)
+		except:
+			pass
+
+		return value
 
 	#----------------------------------------------------------------
 	# getTimeSincePressed()
