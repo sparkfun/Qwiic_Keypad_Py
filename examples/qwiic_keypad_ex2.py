@@ -49,23 +49,23 @@ def runExample():
 	print("\nSparkFun qwiic Keypad   Example 2\n")
 	myKeypad = qwiic_keypad.QwiicKeypad()
 
-	if myKeypad.isConnected() == False:
+	if myKeypad.connected == False:
 		print("The Qwiic Keypad device isn't connected to the system. Please check your connection", \
 			file=sys.stderr)
 		return
 
 	myKeypad.begin()
 
-	print("Initialized. Firmware Version: %s" % myKeypad.getVersion())
+	print("Initialized. Firmware Version: %s" % myKeypad.version)
 
 
 	button = 0
 	while True:
 
 		# necessary for keypad to pull button from stack to readable register
-		myKeypad.updateFIFO()  
-		button = myKeypad.getButton()
-		deltaT = myKeypad.getTimeSincePressed()
+		myKeypad.update_fifo()  
+		button = myKeypad.get_button()
+		deltaT = myKeypad.time_since_pressed()
 
 		if button == -1:
 			print("No keypad detected")

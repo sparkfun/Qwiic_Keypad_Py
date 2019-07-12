@@ -112,11 +112,11 @@ class QwiicKeypad(object):
 			self._i2c = i2c_driver
 
 	# ----------------------------------
-	# isConnected()
+	# is_connected()
 	#
 	# Is an actual board connected to our system?
 
-	def isConnected(self):
+	def is_connected(self):
 		""" 
 			Determine if a Keypad device is conntected to the system..
 
@@ -125,6 +125,8 @@ class QwiicKeypad(object):
 
 		"""
 		return qwiic_i2c.isDeviceConnected(self.address)
+
+	connected = property(is_connected)
 
 	# ----------------------------------
 	# begin()
@@ -141,14 +143,14 @@ class QwiicKeypad(object):
 		
 		# Basically return True if we are connected...
 	
-		return self.isConnected()
+		return self.is_connected()
 
 	#----------------------------------------------------------------
-	# getButton()
+	# get_button()
 	#
 	# Returns the button at the top of the stack (aka the oldest button)
 
-	def getButton(self):
+	def get_button(self):
 		""" 
 			Returns the button at the top of the stack (aka the oldest button).
 
@@ -170,10 +172,10 @@ class QwiicKeypad(object):
 		return value
 
 	#----------------------------------------------------------------
-	# getTimeSincePressed()
+	# time_since_pressed()
 	#
 	# Returns the number of milliseconds since the current button in FIFO was pressed.
-	def getTimeSincePressed(self):
+	def time_since_pressed(self):
 		""" 
 			Returns the number of milliseconds since the current button in FIFO was pressed.
 
@@ -186,11 +188,11 @@ class QwiicKeypad(object):
 		return (MSB << 8) | LSB
 
 	#----------------------------------------------------------------
-	# getVersion()
+	# get_version()
 	# 
 	# Returns a string of the firmware version number
 
-	def getVersion(self):
+	def get_version(self):
 		"""
 		Returns a string of the firmware version number
 
@@ -202,13 +204,14 @@ class QwiicKeypad(object):
 
 		return "v %d.%d" % ( vMajor, vMinor)
 
+	version = property(get_version)
 	#----------------------------------------------------------------
-	# updateFIFO()
+	# update_fifo()
 	#
  	# "commands" keypad to plug in the next button into the registerMap
 	#  note, this actually sets the bit0 on the updateFIFO register
 
-	def updateFIFO(self):
+	def update_fifo(self):
 		"""
 		"commands" keypad to plug in the next button into the registerMap
 		note, this actually sets the bit0 on the updateFIFO register
