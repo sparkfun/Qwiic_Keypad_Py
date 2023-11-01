@@ -140,7 +140,13 @@ def clearEntry(userEntry):
 def printEntry(userEntry):
 
 	print("\rUserEntry:%s" % (''.join(userEntry)), end="")
-	sys.stdout.flush()
+	# Some platforms won't print until newline character, so a flush is
+	# needed to update. However some platforms (eg. MicroPython) don't
+	# include sys.stdout.flush(), so wrap in a try block
+	try:
+		sys.stdout.flush()
+	except:
+		pass
 
 
 if __name__ == '__main__':

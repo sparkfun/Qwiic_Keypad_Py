@@ -81,8 +81,13 @@ def runExample():
 			else: 
 				print(charButton, end="")
 
-			# Flush the stdout buffer to give immediate user feedback
-			sys.stdout.flush()
+			# Some platforms won't print until newline character, so a flush is
+			# needed to update. However some platforms (eg. MicroPython) don't
+			# include sys.stdout.flush(), so wrap in a try block
+			try:
+				sys.stdout.flush()
+			except:
+				pass
 
 		time.sleep(.25)
 
