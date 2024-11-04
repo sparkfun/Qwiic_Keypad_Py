@@ -3,6 +3,8 @@
 # qwiic_env_keypad_ex3.py
 #
 # Simple Example for the Qwiic Keypad Device
+#  This example waits for the user to input the correct 4 digit keycode,
+#  and then responds with a nice message on serial if they get it right.
 #------------------------------------------------------------------------
 #
 # Written by  SparkFun Electronics, May 2019
@@ -152,7 +154,7 @@ if __name__ == '__main__':
 	try:
 		runExample()
 	except (KeyboardInterrupt, SystemExit) as exErr:
-		print("\nEnding Example 1")
+		print("\nEnding Example 3")
 		sys.exit(0)
 
 

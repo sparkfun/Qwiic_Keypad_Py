@@ -3,6 +3,7 @@
 # qwiic_env_keypad_ex2.py
 #
 # Simple Example for the Qwiic Keypad Device including Time
+# This example prints which button was pressed and when it was presed.
 #------------------------------------------------------------------------
 #
 # Written by  SparkFun Electronics, May 2019

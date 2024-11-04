@@ -3,6 +3,7 @@
 # qwiic_env_keypad_ex1.py
 #
 # Simple Example for the Qwiic Keypad Device
+# This example prints which button was pressed. Press * for space and # for new line.
 #------------------------------------------------------------------------
 #
 # Written by  SparkFun Electronics, May 2019
